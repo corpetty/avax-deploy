@@ -1,4 +1,5 @@
 ## Requirements
+- docker on host machine
 - provisioned machine (tested on Ubuntu 18.04 LTS)
   - avalanchego DOES NOT compile on ARM64 architectures
 - ansible on both host and provisioned machine
