@@ -1,0 +1,12 @@
+[Unit]
+Description=Avalanchego Service
+
+[Service]
+ExecStart=/usr/bin/avax_run
+User=avax
+Group=avax
+Restart=always
+LogLevelMax=err
+
+[Install]
+WantedBy=default.target

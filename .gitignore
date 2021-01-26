@@ -1,0 +1,4 @@
+assets/cert_keys
+build
+*.env
+inventory.yml
