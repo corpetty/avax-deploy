@@ -9,6 +9,7 @@
     avax_staking_enabled: "{{ lookup('env', 'AVAX_STAKING_ENABLED') }}"
     avax_staking_port: "{{ lookup('env', 'AVAX_STAKING_PORT') }}"
     avax_bootstrap_ips: "{{ lookup('env', 'AVAX_STAKING_BOOTSTRAP_IPS') }}"
+    avax_bootstrap_ids: "{{ lookup('env', 'AVAX_STAKING_BOOTSTRAP_IDS') }}"
     avax_executable_name: avalanchego
     avax_plugin_location: /usr/bin
     avax_user: avax
