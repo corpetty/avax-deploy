@@ -57,34 +57,6 @@
         owner: "{{ avax_user }}"
         group: "{{ avax_user }}"
 
-    - name: Download avax release
-      tags:
-        - download_release
-      get_url:
-        url: "{{ avax_release_url }}"
-        dest: "{{ avax_release_folder }}/avax.tgz"
-
-    - name: Extract release archive
-      tags:
-        - download_release
-      unarchive:
-        remote_src: yes
-        src: "{{ avax_release_folder }}/avax.tgz"
-        dest: "{{ avax_release_folder }}"
-
-    - name: Move release executable to /usr/bin
-      tags:
-        - download_release
-      command: "sh -c 'mv {{ avax_release_folder }}/*/build/avax_beacon_node /usr/bin/{{ avax_executable_name }}'"
-
-    # - name: Upload ncli_db executable
-    #   tags:
-    #     - never
-    #     - upload_exec
-    #   copy:
-    #     src: ../../build/ncli_db
-    #     dest: /usr/bin/
-
     - name: Upload run file
       tags:
         - setup
@@ -102,15 +74,14 @@
         dest: "/usr/bin/{{ avax_executable_name }}"
         mode: g+rx,o+rx
 
-    # - name: Fix executable ncli_db permissions
-    #   tags:
-    #     - setup
-    #     - chmod
-    #     - upload_exec
-
-      # file:
-      #   dest: /usr/bin/ncli_db
-      #   mode: g+rx,o+rx
+    - - name: Fix evm plugin executable permissions
+      tags:
+        - chmod
+        - upload_exec
+        - download_release
+      file:
+        dest: "/usr/bin/evm"
+        mode: g+rx,o+rx
 
     - name: Fix run file permissions
       tags:
@@ -150,14 +121,6 @@
         dest: "{{ avax_db_dir }}"
         owner: "{{ avax_user }}"
         group: "{{ avax_user }}"
-
-    - name: Remove validator keys
-      tags:
-        - never
-        - remove_keys
-      file:
-        state: absent
-        path: "{{ validator_keys_path }}"
 
     - name: Setup logrotate
       tags:
