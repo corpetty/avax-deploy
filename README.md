@@ -7,6 +7,9 @@
 - standard SSH keys from host file
 
 ## Notes
+- login to host and copy your SSH public key into the `~/.ssh/authorized_keys` file
+  - `.ssh` directory should have `chmod 700` permissions
+  - `authorized_keys` file should have `chmod 600` permissions
 - copy `config.env.example` and `inventory.yml.example` to their names with `example`
   - fill in any changes to `config.env`
   - put in your IP for `inventory.yml`
