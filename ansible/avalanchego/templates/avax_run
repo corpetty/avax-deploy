@@ -14,7 +14,7 @@
   --staking-port={{ avax_staking_port }} \
   --bootstrap-ips={{ avax_bootstrap_ips }} \
   --bootstrap-ids={{ avax_bootstrap_ids }} \
-  --plugin-dir={{ avax_plugin_location }}
+  --plugin-dir={{ avax_plugin_location }} \
   --assertions-enabled=true \
   --version=false \
   --tx-fee=1000000 \
