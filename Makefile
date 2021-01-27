@@ -38,7 +38,7 @@ kill_docker_container:
 	docker kill $(AVAX_DOCKER_CONTAINER_NAME)
 
 step_01_setup_system: config
-	ansible-playbook -i inventory.yml ansible/system/playbook.yml -u petty --extra-vars "ansible_sudo_pass=$(REMOTE_SUDO_PASS)"
+	ansible-playbook -i inventory.yml ansible/system/playbook.yml -u $(HOST_USERNAME) --extra-vars "ansible_sudo_pass=$(REMOTE_SUDO_PASS)"
 
 # It builds a docker image used to build avax.
 step_02_build_avax_docker_image: config build_avax_docker_image
