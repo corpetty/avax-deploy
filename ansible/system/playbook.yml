@@ -71,18 +71,6 @@
         proto: tcp
         port: "9653"
 
-    - name: UFW - Allow Avalanche TCP connections
-      ufw:
-        rule: allow
-        proto: tcp
-        port: "9654"
-    
-    - name: UFW - Allow Avalanche TCP connections
-      ufw:
-        rule: allow
-        proto: tcp
-        port: "9652"
-
     - name: UFW - Deny all other incoming traffic by default
       ufw:
         state: enabled

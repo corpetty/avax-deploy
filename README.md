@@ -9,6 +9,8 @@
     - login to host and copy your SSH public key into the `~/.ssh/authorized_keys` file
     - `.ssh` directory should have `chmod 700` permissions
     - `authorized_keys` file should have `chmod 600` permissions
+- You will need to set a port-forward in your network firewall (your router probably) to:
+  - `<remote machine LAN IP>:9653`
   
 ## Notes
 - avalanchego DOES NOT compile on ARM64 architectures
