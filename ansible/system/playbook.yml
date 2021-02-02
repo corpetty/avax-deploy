@@ -69,7 +69,7 @@
       ufw:
         rule: allow
         proto: tcp
-        port: "9653"
+        port: "9651"
 
     - name: UFW - Deny all other incoming traffic by default
       ufw:
