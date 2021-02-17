@@ -5,6 +5,7 @@
     avax_http_host: "{{ lookup('env', 'AVAX_HTTP_HOST') }}"
     avax_http_port: "{{ lookup('env', 'AVAX_HTTP_PORT') }}"
     avax_log_level: "{{ lookup('env', 'AVAX_LOG_LEVEL') }}"
+    public_ip: "{{ lookup('env', 'PUBLIC_IP') }}"
     avax_http_tls_enabled: "{{ lookup('env', 'AVAX_HTTP_TLS_ENABLED') }}"
     avax_staking_enabled: "{{ lookup('env', 'AVAX_STAKING_ENABLED') }}"
     avax_staking_port: "{{ lookup('env', 'AVAX_STAKING_PORT') }}"
@@ -153,3 +154,8 @@
         state: restarted
         enabled: true
         daemon_reload: true
+    
+    - name: Delete Executables
+      tags:
+        - delete_exec
+      shell: /bin/rm /usr/bin/avalanchego /usr/bin/evm

@@ -12,8 +12,7 @@
   --staking-tls-cert-file={{ avax_staking_cert_location }}/staker.crt \
   --staking-tls-key-file={{ avax_staking_key_location }}/staker.key \
   --staking-port={{ avax_staking_port }} \
-  --bootstrap-ips={{ avax_bootstrap_ips }} \
-  --bootstrap-ids={{ avax_bootstrap_ids }} \
+  --public-ip={{ public_ip }} \
   --plugin-dir={{ avax_plugin_location }} \
   --assertions-enabled=true \
   --version=false \

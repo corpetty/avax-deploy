@@ -37,6 +37,9 @@ build_cert_keys: setup_assets_folder
 kill_docker_container:
 	docker kill $(AVAX_DOCKER_CONTAINER_NAME)
 
+delete_executables:
+	ansible-playbook -i inventory.yml -u avax ansible/avalanchego/playbook.yml --tags delete_exec
+
 step_01_setup_system: config
 	ansible-playbook -i inventory.yml ansible/system/playbook.yml -u $(HOST_USERNAME) --extra-vars "ansible_sudo_pass=$(REMOTE_SUDO_PASS)"
 
