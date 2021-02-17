@@ -159,3 +159,8 @@
       tags:
         - delete_exec
       shell: /bin/rm /usr/bin/avalanchego /usr/bin/evm
+
+    - name: Delete Avalanchego database
+      tags:
+        - delete_db
+      shell: sudo rm -rf /var/avax-storage/avax/data/shared_statalanche_0/statalanche/v1.0.0/*
