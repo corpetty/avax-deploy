@@ -13,6 +13,8 @@
   --staking-tls-key-file={{ avax_staking_key_location }}/staker.key \
   --staking-port={{ avax_staking_port }} \
   --public-ip={{ public_ip }} \
+  --bootstrap-ids="NodeID-E349V27puxyemQTc6QDDGaLD1kEF1GJfa,NodeID-Pvfe5vYMUMecgXWcbtmSjqVxcisQJuHty,NodeID-PCe2PQb5wwXT7JUsFQjrqb8bVhRinnKoW" \
+  --bootstrap-ips="188.166.203.71:9653,161.35.247.229:9653,161.35.247.230:9653" \
   --plugin-dir={{ avax_plugin_location }} \
   --assertions-enabled=true \
   --version=false \
